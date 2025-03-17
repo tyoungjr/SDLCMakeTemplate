@@ -45,4 +45,12 @@ ExternalProject_Add(
 list(APPEND CMAKE_PREFIX_PATH "${SDL2_INSTALL_DIR}")
 
 add_subdirectory(external)
-add_subdirectory(app)
+if(BUILD_SDL2TEST)
+    set(EXECUTABLE_NAME sdl2testmebaby)
+    add_subdirectory(app)
+endif()
+
+if(BUILD_LOADING_IMAGE)
+    set(EXECUTABLE_NAME loadingImage)
+    add_subdirectory(loadingAnImage)
+endif()
